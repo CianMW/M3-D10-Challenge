@@ -121,29 +121,67 @@ let submitData = async (event) => {
 //fill productlist
 
 let fillProductList = async () => {
-            let response = await fetch("https://striveschool-api.herokuapp.com/api/movies/comedy ", {
+            let response = await fetch("https://striveschool-api.herokuapp.com/api/movies/ ", {
       headers: {
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWQ5ODRiYjUzZDAwMTViMTllZDAiLCJpYXQiOjE2MzIzMTI3MjgsImV4cCI6MTYzMzUyMjMyOH0.1mHsb-t2ReuCs2WsyDFcnIoddjZMG44_rc-BM_Catno"
       }})
       let data = await response.json()
       console.log(data)
       data.forEach(obj => {
-        let newLiNode = document.createElement("li")
-        newLiNode.innerHTML = `<li class="w-100 d-flex justify-content-between mb-2" style="border-bottom:0.4px solid black">
-           <span>${obj.name}</span>
+          let newLiNode = document.createElement("li")
+          newLiNode.className = `dropdown ${obj}`
+            newLiNode.innerHTML = `
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+            </ul>`
+
+            document.getElementById("product-list").appendChild(newLiNode)
+
+
+            let innerFetchResponse = fetch("https://striveschool-api.herokuapp.com/api/movies/" + obj, {
+      headers: {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWQ5ODRiYjUzZDAwMTViMTllZDAiLCJpYXQiOjE2MzIzMTI3MjgsImV4cCI6MTYzMzUyMjMyOH0.1mHsb-t2ReuCs2WsyDFcnIoddjZMG44_rc-BM_Catno"
+      }})
+
+        .then(innerFetchResponse => innerFetchResponse.json())
+
+        .then (body => 
+        
+        body.forEach(elem => {
+            let innerLiNode = document.createElement("li")
+
+        innerLiNode.innerHTML = `<li class="w-100 d-flex justify-content-between mb-2" style="border-bottom:0.4px solid black">
+           <span class="info-name" value="${elem.name}">${elem.name}</span>
            <div>
-            <span class="mr-3">${obj.category}</span>
-            <button type="button" id=${obj._id} onclick="goToDetails(event)" class="btn btn-secondary">edit</button>
+            <span class="info-image" value="${elem.imageUrl}" hidden></span>
+            <span class="info-description" value="${elem.description}" hidden></span>
+            <span class="mr-3 info-category" value="${elem.category}" >${elem.category}</span>
+            <button type="button" id=${elem._id}  onclick="buttonCheck(event)" class="btn btn-secondary">edit</button>
             </div>
           
         </li>
-        `
-        document.getElementById("product-list").appendChild(newLiNode)
+        `  
+        document.querySelector(`.${obj} .dropdown-menu`).appendChild(innerLiNode)
         
+    
+    }));
+         
+
+
       });
 
   
     
+}
+
+let buttonCheck = (event) => {
+    let names = event.currentTarget.closest(".info-name").value
+    let categorys = event.currentTarget.closest(".info-category").value
+    let descriptions = event.currentTarget.closest(".info-description").value
+    let images = event.currentTarget.closest(".info-image").value
+    console.log(names, categorys, descriptions, images)
+
+   
 }
 
 let goToDetails = (event) => {

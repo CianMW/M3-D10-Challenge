@@ -204,7 +204,7 @@
             let newDivNode = document.createElement("div")
             newDivNode.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1"
 
-            newDivNode.innerHTML = `<img class="img-fluid w-100 rounded" src="${obj.imageUrl}" alt="">
+            newDivNode.innerHTML = `<a href="./details.html?itemID=${obj._id}&catID=${obj.category}"><img class="img-fluid w-100 rounded" src="${obj.imageUrl}" alt=""></a>
                 <img src="/assets/netflix_logo.png" width="40" height="36" class="prime-badge"/>`
 
             document.querySelector("#comedy").appendChild(newDivNode)

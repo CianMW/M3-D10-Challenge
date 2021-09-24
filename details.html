@@ -38,6 +38,10 @@
 
     <script>
         let displayData = (data) =>{
+
+            let item = data.filter(elem => elem._id === id)
+            console.log(item)
+
             let newRowNode = document.createElement("div")
             newRowNode.className ="row justify-content-center"
             newRowNode.innerHTML = `
@@ -55,20 +59,21 @@
             document.getElementById("detail-container").appendChild(newRowNode)
         }
 
-
-        window.onload = async () => {
             let url = "https://striveschool-api.herokuapp.com/api/movies/"
-            let id = new URLSearchParams(location.search).get("itemid")
+            let id = new URLSearchParams(location.search).get("itemID")
+            let category = new URLSearchParams(location.search).get("catID")
+        window.onload = async () => {
+           
             console.log(id)
 
-            let response = await fetch(url + id , {
+            let response = await fetch(url +"/" + category +"/", {
             headers: {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWQ5ODRiYjUzZDAwMTViMTllZDAiLCJpYXQiOjE2MzIzMTI3MjgsImV4cCI6MTYzMzUyMjMyOH0.1mHsb-t2ReuCs2WsyDFcnIoddjZMG44_rc-BM_Catno",
             "Content-Type" : "application/json"
         }})
             let data = await response.json()
              console.log(data)
-            //displayData(data)
+            displayData(data)
         }
 
         const edit = (event) => {
