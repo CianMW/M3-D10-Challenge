@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="settingsStyles.css">
+  <title>Profile</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-custom navbar-expand-lg ">
+      <a class="navbar-brand" href="#"><img src="./assets/netflix_logo.png" width="120"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">TV Shows</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Movies
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Recently Added</a>
+                      <a class="dropdown-item" href="#">My List</a>
+                      <a class="dropdown-item" href="#">Others</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+          </ul>
+          <div>
+              <img src="./assets/search_logo.svg" width="22" height="22" />
+              <span style="color: rgb(206, 197, 197);" class="d-inline-block pl-1 ">Kids</span>
+              <div class="dropdown d-inline-block">
+                  <a class="btn nav-btn dropdown-toggle" href="profile.html" role="button" id="dropdownMenuLink"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="./Profile-picture.PNG" width="32" height="32" class="img-thumbnail" />
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="profile.html">Sakib</a>
+                      <a class="dropdown-item" href="profile.html">Juha</a>
+                      <a class="dropdown-item" href="profile.html">Cian</a>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </nav>
+
+  </header>
+
+
+
+  <div class="container">
+    <div class="row">
+      <!--outer row-->
+      <div class="col-1"></div>
+        <!---left empty column-->
+        <div class="col-10"><!---large central column-->
+
+          <div class="row" id="page-heading"><!---page heading row-->
+            <div class="col-12 heading" style="border-bottom: 1px solid #666666">
+              <h1>Account</h1>
+            </div>
+          </div>  <!---page heading row ends-->
+
+          <div class="row" style="border-bottom: 1px solid #666666;"> <!---Membership & billing row-->
+              <div class="col-3 section-heading">
+                <h6 >MEMBERSHIP & BILLING</h6>
+                <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+              </div>
+
+              <div class="col-9"> <!---column that holds 3 nested rows with info-->
+
+                  <div class="row" style="border-bottom: 1px solid #666666;"> <!---top row--->
+                      <div class="col-6 personal-data-left">
+                        <p>Strive.student</p>
+                        <p>Password: ***********</p>
+                        <p>Phone: 123 456 789</p>
+                      </div>
+                      <div class="col-6 personal-data-right">
+                        <p><a href="google.com">Change account email</a></p>
+                        <p><a href="google.com">Change password</a></p>
+                        <p><a href="google.com">Change phone number</a></p>
+                      </div>
+                  </div>
+
+                  <div class="row" style="border-bottom: 1px solid #666666;"> <!---middle row--->
+                    <div class="col-6 personal-data-left">
+                      <p>Paypal</p><span>admin@strive.school</span>
+                    </div>
+                    <div class="col-6 personal-data-right">
+                      <p><a  href="google.com">Update payment info</a></p>
+                      <p><a href="google.com">Billing details</a></p>
+                    </div>
+                </div>
+
+                <div class="row"> <!---bottom row--->
+                  <div class="col-12 personal-data-right">
+                    <p><a href="google.com">Redeem gift card promo code</a></p>
+                    <p><a href="google.com">Where to buy gift cards</a></p>
+                  </div>
+              </div>
+
+
+              </div><!---column that holds 3 nested rows with info ENDS-->
+
+
+          </div><!---Membership & billing row ends-->
+
+
+          <div class="row" style="border-bottom: 1px solid #666666;"> <!---Plan details row-->
+              <div class="col-3 personal-data-left">
+                <p>PLAN DETAILS</p>
+              </div>
+              <div class="col-5 personal-data-left">
+                <P>Premium</P>
+              </div>
+              <div class="col-4 personal-data-right">
+                <p><a href="google.com">Change plan</a></p>
+              </div>
+
+
+          </div> <!---Plan details row ends-->
+
+          <div class="row"  style="border-bottom: 1px solid #666666;"> <!---settings row-->
+            <div class="col-3 personal-data-left">
+              <p>SETTINGS</p>
+            </div>
+            <div class="col-9 personal-data-left">
+              <P><a href="google.com">Parental controls</a></P>
+              <P><a href="google.com">Test participation</a></P>
+              <P><a href="google.com">Manage download devices</a></P>
+              <P><a href="google.com">Activate a device</a></P>
+              <P><a href="google.com">Recent device streaming activity</a></P>
+              <P><a href="google.com">Sign out of all devices</a></P>
+            </div>
+
+
+        </div> <!---settings row ends-->
+
+        <div class="row"> <!---MY PROFILE ROW STARTS-->
+            <div class="col-3 personal-data-left">
+              <p>MY PROFILE</p>
+            </div>
+            <div class="col-5">
+              <span class="username"><img src="./Profile-picture.PNG" width="32" height="32">Strive.student</span>
+              <p><a></a></p>
+              <p><a></a></p>
+              <p><a></a></p>
+          
+            </div>
+            <div class="col-4 personal-data-right">
+              <p><a href="google.com">Manage profiles</a></p>
+              <p><a href="google.com">Add profile email</a></p>
+            </div>
+        </div><!---MY PROFILE ROW ENDS-->
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3 personal-data-left">
+              <p><a href="google.com">Language</a></p>
+              <p><a href="google.com">Playback settings</a></p>
+              <p><a href="google.com">Subtitle appearance</a></p>
+
+            </div>
+            <div class="col-3 personal-data-right">
+              <p><a href="google.com">Viewing activity</a></p>
+              <p><a href="google.com">Ratings</a></p>
+
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        </div><!---large central column ends-->
+
+        <div class="col-1"></div>
+        <!---right empty column-->
+    </div>
+      <!---outer row ends-->
+
+
+    </div> <!---end of container div-->
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(245, 244, 244);
+    color: gray;
+}
+.navbar-custom{
+    background-color: black;
+    background-repeat: repeat-x;
+  }
+
+.navbar-brand{
+    width: 300px;
+    height:40px
+}
+#navbar-custom{
+    background-color: black;
+}
+.heading{
+     border-bottom: 1px solid #666666;
+     padding: 1em 0 ;
+}
+
+.section-heading{
+    text-align: left;
+    padding: 0;
+    display: inline;
+}
+.personal-data-right{
+    text-align: right;
+    padding: 0;
+}
+.personal-data-left{
+    text-align: left;
+    padding: 0;
+}
+.username{
+    display: inline;
+}
+.link{
+    color: #034deb;
+}
