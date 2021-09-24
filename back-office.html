@@ -129,10 +129,10 @@ let fillProductList = async () => {
       console.log(data)
       data.forEach(obj => {
           let newLiNode = document.createElement("li")
-          newLiNode.className = `dropdown ${obj}`
+          newLiNode.className = `dropdown "w-100 d-flex justify-content-between mb-4" style="border-bottom:0.4px solid black" ${obj}`
             newLiNode.innerHTML = `
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
+        <a href="#" class="dropdown-toggle text-dark mb-3" data-toggle="dropdown" role="button" aria-expanded="false">${obj} <span class="caret"></span></a>
+            <ul class="dropdown-menu w-100" role="menu">
             </ul>`
 
             document.getElementById("product-list").appendChild(newLiNode)
@@ -156,7 +156,7 @@ let fillProductList = async () => {
             <span class="info-image" value="${elem.imageUrl}" hidden></span>
             <span class="info-description" value="${elem.description}" hidden></span>
             <span class="mr-3 info-category" value="${elem.category}" >${elem.category}</span>
-            <button type="button" id=${elem._id}  onclick="buttonCheck(event)" class="btn btn-secondary">edit</button>
+            <a href="./details.html?itemID=${elem._id}&catID=${elem.category}"><button type="button" id=${elem._id}  onclick="" class="btn btn-secondary">edit</button></a>
             </div>
           
         </li>

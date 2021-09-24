@@ -40,6 +40,7 @@
         let displayData = (data) =>{
 
             let item = data.filter(elem => elem._id === id)
+             item = item[0]
             console.log(item)
 
             let newRowNode = document.createElement("div")
@@ -48,13 +49,13 @@
                 <div class="row justify-content-center">
                     
                     <div class="col" style ="width: 30vw">
-                <h3>${data.name}</h3>
-                <p>${data.category}</p>
-                <p>${data.description}</p>
+                <h3>${item.name}</h3>
+                <p>${item.category}</p>
+                <p>${item.description}</p>
                 <p>small text</p>
-                <button type="button" id=${data._id} onclick="edit(event)" class="btn btn-secondary">edit</button>
+                <button type="button" id=${item._id} onclick="edit(event)" class="btn btn-secondary">edit</button>
                     </div>
-                <img src="${data.imageUrl}" width = 200px height = 300px>
+                <img src="${item.imageUrl}" width = 200px height = 300px>
             </div>`
             document.getElementById("detail-container").appendChild(newRowNode)
         }
